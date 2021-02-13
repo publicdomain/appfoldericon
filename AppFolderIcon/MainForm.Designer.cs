@@ -35,179 +35,213 @@ namespace AppFolderIcon
         /// </summary>
         private void InitializeComponent()
         {
-        	System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-        	this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
-        	this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-        	this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-        	this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.originalThreadDonationCodercomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.sourceCodeGithubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-        	this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
-        	this.mainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-        	this.countToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-        	this.BrowseForFolderButton = new System.Windows.Forms.Button();
-        	this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-        	this.mainMenuStrip.SuspendLayout();
-        	this.mainStatusStrip.SuspendLayout();
-        	this.SuspendLayout();
-        	// 
-        	// mainMenuStrip
-        	// 
-        	this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.minimizeToolStripMenuItem,
-        	        	        	this.fileToolStripMenuItem1,
-        	        	        	this.optionsToolStripMenuItem,
-        	        	        	this.helpToolStripMenuItem});
-        	this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
-        	this.mainMenuStrip.Name = "mainMenuStrip";
-        	this.mainMenuStrip.Size = new System.Drawing.Size(257, 24);
-        	this.mainMenuStrip.TabIndex = 27;
-        	// 
-        	// minimizeToolStripMenuItem
-        	// 
-        	this.minimizeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-        	this.minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
-        	this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
-        	this.minimizeToolStripMenuItem.Visible = false;
-        	// 
-        	// fileToolStripMenuItem1
-        	// 
-        	this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.exitToolStripMenuItem1});
-        	this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-        	this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
-        	this.fileToolStripMenuItem1.Text = "&File";
-        	// 
-        	// exitToolStripMenuItem1
-        	// 
-        	this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-        	this.exitToolStripMenuItem1.Size = new System.Drawing.Size(92, 22);
-        	this.exitToolStripMenuItem1.Text = "E&xit";
-        	this.exitToolStripMenuItem1.Click += new System.EventHandler(this.OnExitToolStripMenuItem1Click);
-        	// 
-        	// optionsToolStripMenuItem
-        	// 
-        	this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.alwaysOnTopToolStripMenuItem});
-        	this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-        	this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-        	this.optionsToolStripMenuItem.Text = "&Options";
-        	this.optionsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OnOptionsToolStripMenuItemDropDownItemClicked);
-        	// 
-        	// alwaysOnTopToolStripMenuItem
-        	// 
-        	this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
-        	this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-        	this.alwaysOnTopToolStripMenuItem.Text = "&Always on top";
-        	// 
-        	// helpToolStripMenuItem
-        	// 
-        	this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem,
-        	        	        	this.originalThreadDonationCodercomToolStripMenuItem,
-        	        	        	this.sourceCodeGithubcomToolStripMenuItem,
-        	        	        	this.toolStripSeparator2,
-        	        	        	this.aboutToolStripMenuItem});
-        	this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-        	this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-        	this.helpToolStripMenuItem.Text = "&Help";
-        	// 
-        	// weeklyReleasesPublicDomainWeeklycomToolStripMenuItem
-        	// 
-        	this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Name = "weeklyReleasesPublicDomainWeeklycomToolStripMenuItem";
-        	this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
-        	this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Text = "&Weekly releases @ PublicDomainWeekly.com";
-        	this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Click += new System.EventHandler(this.OnWeeklyReleasesPublicDomainWeeklycomToolStripMenuItemClick);
-        	// 
-        	// originalThreadDonationCodercomToolStripMenuItem
-        	// 
-        	this.originalThreadDonationCodercomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("originalThreadDonationCodercomToolStripMenuItem.Image")));
-        	this.originalThreadDonationCodercomToolStripMenuItem.Name = "originalThreadDonationCodercomToolStripMenuItem";
-        	this.originalThreadDonationCodercomToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
-        	this.originalThreadDonationCodercomToolStripMenuItem.Text = "&Original thread @ DonationCoder.com";
-        	this.originalThreadDonationCodercomToolStripMenuItem.Click += new System.EventHandler(this.OnOriginalThreadDonationCodercomToolStripMenuItemClick);
-        	// 
-        	// sourceCodeGithubcomToolStripMenuItem
-        	// 
-        	this.sourceCodeGithubcomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sourceCodeGithubcomToolStripMenuItem.Image")));
-        	this.sourceCodeGithubcomToolStripMenuItem.Name = "sourceCodeGithubcomToolStripMenuItem";
-        	this.sourceCodeGithubcomToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
-        	this.sourceCodeGithubcomToolStripMenuItem.Text = "Source code @ Github.com";
-        	this.sourceCodeGithubcomToolStripMenuItem.Click += new System.EventHandler(this.OnSourceCodeGithubcomToolStripMenuItemClick);
-        	// 
-        	// toolStripSeparator2
-        	// 
-        	this.toolStripSeparator2.Name = "toolStripSeparator2";
-        	this.toolStripSeparator2.Size = new System.Drawing.Size(310, 6);
-        	// 
-        	// aboutToolStripMenuItem
-        	// 
-        	this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-        	this.aboutToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
-        	this.aboutToolStripMenuItem.Text = "&About...";
-        	this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
-        	// 
-        	// mainStatusStrip
-        	// 
-        	this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.mainToolStripStatusLabel,
-        	        	        	this.countToolStripStatusLabel});
-        	this.mainStatusStrip.Location = new System.Drawing.Point(0, 72);
-        	this.mainStatusStrip.Name = "mainStatusStrip";
-        	this.mainStatusStrip.Size = new System.Drawing.Size(257, 22);
-        	this.mainStatusStrip.SizingGrip = false;
-        	this.mainStatusStrip.TabIndex = 26;
-        	// 
-        	// mainToolStripStatusLabel
-        	// 
-        	this.mainToolStripStatusLabel.Name = "mainToolStripStatusLabel";
-        	this.mainToolStripStatusLabel.Size = new System.Drawing.Size(102, 17);
-        	this.mainToolStripStatusLabel.Text = "Processed folders:";
-        	// 
-        	// countToolStripStatusLabel
-        	// 
-        	this.countToolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.countToolStripStatusLabel.Name = "countToolStripStatusLabel";
-        	this.countToolStripStatusLabel.Size = new System.Drawing.Size(14, 17);
-        	this.countToolStripStatusLabel.Text = "0";
-        	// 
-        	// BrowseForFolderButton
-        	// 
-        	this.BrowseForFolderButton.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.BrowseForFolderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.BrowseForFolderButton.Location = new System.Drawing.Point(0, 24);
-        	this.BrowseForFolderButton.Name = "BrowseForFolderButton";
-        	this.BrowseForFolderButton.Size = new System.Drawing.Size(257, 48);
-        	this.BrowseForFolderButton.TabIndex = 28;
-        	this.BrowseForFolderButton.Text = "&Browse for folder ";
-        	this.BrowseForFolderButton.UseVisualStyleBackColor = true;
-        	this.BrowseForFolderButton.Click += new System.EventHandler(this.OnBrowseForFolderButtonClick);
-        	// 
-        	// MainForm
-        	// 
-        	this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        	this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        	this.ClientSize = new System.Drawing.Size(257, 94);
-        	this.Controls.Add(this.BrowseForFolderButton);
-        	this.Controls.Add(this.mainMenuStrip);
-        	this.Controls.Add(this.mainStatusStrip);
-        	this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-        	this.Name = "MainForm";
-        	this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-        	this.Text = "AppFolderIcon";
-        	this.mainMenuStrip.ResumeLayout(false);
-        	this.mainMenuStrip.PerformLayout();
-        	this.mainStatusStrip.ResumeLayout(false);
-        	this.mainStatusStrip.PerformLayout();
-        	this.ResumeLayout(false);
-        	this.PerformLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.originalThreadDonationCodercomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sourceCodeGithubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.mainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.countToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.BrowseForFolderButton = new System.Windows.Forms.Button();
+            this.deleteDesktopIniButton = new System.Windows.Forms.Button();
+            this.mainMenuStrip.SuspendLayout();
+            this.mainStatusStrip.SuspendLayout();
+            this.mainTableLayoutPanel.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // mainMenuStrip
+            // 
+            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.minimizeToolStripMenuItem,
+                                    this.fileToolStripMenuItem1,
+                                    this.optionsToolStripMenuItem,
+                                    this.helpToolStripMenuItem});
+            this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.mainMenuStrip.Name = "mainMenuStrip";
+            this.mainMenuStrip.Size = new System.Drawing.Size(257, 24);
+            this.mainMenuStrip.TabIndex = 27;
+            // 
+            // minimizeToolStripMenuItem
+            // 
+            this.minimizeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
+            this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
+            this.minimizeToolStripMenuItem.Visible = false;
+            // 
+            // fileToolStripMenuItem1
+            // 
+            this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.exitToolStripMenuItem1});
+            this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
+            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem1.Text = "&File";
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem1.Text = "E&xit";
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.OnExitToolStripMenuItem1Click);
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.alwaysOnTopToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = "&Options";
+            this.optionsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OnOptionsToolStripMenuItemDropDownItemClicked);
+            // 
+            // alwaysOnTopToolStripMenuItem
+            // 
+            this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
+            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.alwaysOnTopToolStripMenuItem.Text = "&Always on top";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem,
+                                    this.originalThreadDonationCodercomToolStripMenuItem,
+                                    this.sourceCodeGithubcomToolStripMenuItem,
+                                    this.toolStripSeparator2,
+                                    this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // weeklyReleasesPublicDomainWeeklycomToolStripMenuItem
+            // 
+            this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Name = "weeklyReleasesPublicDomainWeeklycomToolStripMenuItem";
+            this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Text = "&Weekly releases @ PublicDomainWeekly.com";
+            this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Click += new System.EventHandler(this.OnWeeklyReleasesPublicDomainWeeklycomToolStripMenuItemClick);
+            // 
+            // originalThreadDonationCodercomToolStripMenuItem
+            // 
+            this.originalThreadDonationCodercomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("originalThreadDonationCodercomToolStripMenuItem.Image")));
+            this.originalThreadDonationCodercomToolStripMenuItem.Name = "originalThreadDonationCodercomToolStripMenuItem";
+            this.originalThreadDonationCodercomToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.originalThreadDonationCodercomToolStripMenuItem.Text = "&Original thread @ DonationCoder.com";
+            this.originalThreadDonationCodercomToolStripMenuItem.Click += new System.EventHandler(this.OnOriginalThreadDonationCodercomToolStripMenuItemClick);
+            // 
+            // sourceCodeGithubcomToolStripMenuItem
+            // 
+            this.sourceCodeGithubcomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sourceCodeGithubcomToolStripMenuItem.Image")));
+            this.sourceCodeGithubcomToolStripMenuItem.Name = "sourceCodeGithubcomToolStripMenuItem";
+            this.sourceCodeGithubcomToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.sourceCodeGithubcomToolStripMenuItem.Text = "Source code @ Github.com";
+            this.sourceCodeGithubcomToolStripMenuItem.Click += new System.EventHandler(this.OnSourceCodeGithubcomToolStripMenuItemClick);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(310, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.aboutToolStripMenuItem.Text = "&About...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
+            // 
+            // mainStatusStrip
+            // 
+            this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.mainToolStripStatusLabel,
+                                    this.countToolStripStatusLabel});
+            this.mainStatusStrip.Location = new System.Drawing.Point(0, 124);
+            this.mainStatusStrip.Name = "mainStatusStrip";
+            this.mainStatusStrip.Size = new System.Drawing.Size(257, 22);
+            this.mainStatusStrip.SizingGrip = false;
+            this.mainStatusStrip.TabIndex = 26;
+            // 
+            // mainToolStripStatusLabel
+            // 
+            this.mainToolStripStatusLabel.Name = "mainToolStripStatusLabel";
+            this.mainToolStripStatusLabel.Size = new System.Drawing.Size(102, 17);
+            this.mainToolStripStatusLabel.Text = "Processed folders:";
+            // 
+            // countToolStripStatusLabel
+            // 
+            this.countToolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countToolStripStatusLabel.Name = "countToolStripStatusLabel";
+            this.countToolStripStatusLabel.Size = new System.Drawing.Size(14, 17);
+            this.countToolStripStatusLabel.Text = "0";
+            // 
+            // mainTableLayoutPanel
+            // 
+            this.mainTableLayoutPanel.ColumnCount = 1;
+            this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.mainTableLayoutPanel.Controls.Add(this.BrowseForFolderButton, 0, 0);
+            this.mainTableLayoutPanel.Controls.Add(this.deleteDesktopIniButton, 0, 1);
+            this.mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainTableLayoutPanel.Location = new System.Drawing.Point(0, 24);
+            this.mainTableLayoutPanel.Name = "mainTableLayoutPanel";
+            this.mainTableLayoutPanel.RowCount = 2;
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.mainTableLayoutPanel.Size = new System.Drawing.Size(257, 100);
+            this.mainTableLayoutPanel.TabIndex = 28;
+            // 
+            // BrowseForFolderButton
+            // 
+            this.BrowseForFolderButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BrowseForFolderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrowseForFolderButton.Location = new System.Drawing.Point(4, 4);
+            this.BrowseForFolderButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BrowseForFolderButton.Name = "BrowseForFolderButton";
+            this.BrowseForFolderButton.Size = new System.Drawing.Size(249, 57);
+            this.BrowseForFolderButton.TabIndex = 29;
+            this.BrowseForFolderButton.Text = "&Browse for folder ";
+            this.BrowseForFolderButton.UseVisualStyleBackColor = true;
+            // 
+            // deleteDesktopIniButton
+            // 
+            this.deleteDesktopIniButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deleteDesktopIniButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteDesktopIniButton.Location = new System.Drawing.Point(4, 69);
+            this.deleteDesktopIniButton.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteDesktopIniButton.Name = "deleteDesktopIniButton";
+            this.deleteDesktopIniButton.Size = new System.Drawing.Size(249, 27);
+            this.deleteDesktopIniButton.TabIndex = 30;
+            this.deleteDesktopIniButton.Text = "&Delete desktop.ini recursively";
+            this.deleteDesktopIniButton.UseVisualStyleBackColor = true;
+            this.deleteDesktopIniButton.Click += new System.EventHandler(this.OnDeleteDesktopIniButtonClick);
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(257, 146);
+            this.Controls.Add(this.mainTableLayoutPanel);
+            this.Controls.Add(this.mainMenuStrip);
+            this.Controls.Add(this.mainStatusStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "AppFolderIcon";
+            this.mainMenuStrip.ResumeLayout(false);
+            this.mainMenuStrip.PerformLayout();
+            this.mainStatusStrip.ResumeLayout(false);
+            this.mainStatusStrip.PerformLayout();
+            this.mainTableLayoutPanel.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
+        private System.Windows.Forms.Button deleteDesktopIniButton;
+        private System.Windows.Forms.TableLayoutPanel mainTableLayoutPanel;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
         private System.Windows.Forms.Button BrowseForFolderButton;
         private System.Windows.Forms.ToolStripStatusLabel countToolStripStatusLabel;
