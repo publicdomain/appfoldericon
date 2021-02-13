@@ -33,7 +33,8 @@ namespace AppFolderIcon
         /// <param name="e">Event arguments.</param>
         private void OnWeeklyReleasesPublicDomainWeeklycomToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Open weekly releases website
+            Process.Start("https://publicdomainweekly.com");
         }
 
         /// <summary>
