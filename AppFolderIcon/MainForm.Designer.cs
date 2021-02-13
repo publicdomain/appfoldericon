@@ -103,7 +103,7 @@ namespace AppFolderIcon
         	// alwaysOnTopToolStripMenuItem
         	// 
         	this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
-        	this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+        	this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
         	this.alwaysOnTopToolStripMenuItem.Text = "&Always on top";
         	// 
         	// helpToolStripMenuItem
@@ -199,7 +199,7 @@ namespace AppFolderIcon
         	this.Controls.Add(this.mainStatusStrip);
         	this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
         	this.Name = "MainForm";
-        	this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+        	this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         	this.Text = "AppFolderIcon";
         	this.mainMenuStrip.ResumeLayout(false);
         	this.mainMenuStrip.PerformLayout();

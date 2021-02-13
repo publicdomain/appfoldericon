@@ -82,7 +82,8 @@ namespace AppFolderIcon
         /// <param name="e">Event arguments.</param>
         private void OnExitToolStripMenuItem1Click(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Close program
+            this.Close();
         }
 
         /// <summary>
