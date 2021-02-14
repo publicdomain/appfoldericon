@@ -452,7 +452,8 @@ namespace AppFolderIcon
                     }
                     catch (Exception ex)
                     {
-                        // TODO Log error
+                        // Log error event
+                        this.LogEvent("desktop.ini removal failed", $"File: {desktopIniPath}{Environment.NewLine}Message: {ex.Message}");
                     }
                 }
 
