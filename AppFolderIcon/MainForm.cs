@@ -430,7 +430,33 @@ namespace AppFolderIcon
         /// <param name="e">Event arguments.</param>
         private void OnDeleteDesktopIniButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Show folder browser dialog
+            if (this.folderBrowserDialog.ShowDialog() == DialogResult.OK && this.folderBrowserDialog.SelectedPath.Length > 0)
+            {
+                // Declare processed count 
+                int processedCount = 0;
+
+                // Iterate subdirectories
+                foreach (var desktopIniPath in Directory.GetFiles(this.folderBrowserDialog.SelectedPath, "desktop.ini", SearchOption.AllDirectories))
+                {
+                    // Error handling & logging
+                    try
+                    {
+                        // Delete ini file
+                        File.Delete(desktopIniPath);
+
+                        // Raise count
+                        processedCount++;
+                    }
+                    catch (Exception ex)
+                    {
+                        // TODO Log error
+                    }
+                }
+
+                // Advise user
+                MessageBox.Show("Please refresh Explorer to see default icon.", $"Removed {processedCount} desktop.ini files", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
