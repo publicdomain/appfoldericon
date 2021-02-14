@@ -129,6 +129,8 @@ namespace AppFolderIcon
             var licenseText = $"CC0 1.0 Universal (CC0 1.0) - Public Domain Dedication{Environment.NewLine}" +
                 $"https://creativecommons.org/publicdomain/zero/1.0/legalcode{Environment.NewLine}{Environment.NewLine}" +
                 $"Libraries and icons have separate licenses.{Environment.NewLine}{Environment.NewLine}" +
+                $"String Distance library by Iván Stepaniuk - MIT License{Environment.NewLine}" +
+                $"https://github.com/istepaniuk/StringDistance{Environment.NewLine}{Environment.NewLine}" +
                 $"File folder icon by OpenClipart-Vectors - Pixabay License{Environment.NewLine}" +
                 $"https://pixabay.com/vectors/file-folder-gray-iconset-icons-157955/{Environment.NewLine}{Environment.NewLine}" +
                 $"Patreon icon used according to published brand guidelines{Environment.NewLine}" +
@@ -155,7 +157,7 @@ namespace AppFolderIcon
             var aboutForm = new AboutForm(
                 $"About {programTitle}",
                 $"{programTitle} {version.Major}.{version.Minor}.{version.Build}",
-                $"Made for: kunkel321{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #44, Week #06 @ February 13, 2021",
+                $"Made for: kunkel321{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #45, Week #06 @ February 14, 2021",
                 licenseText,
                 this.Icon.ToBitmap())
             {
