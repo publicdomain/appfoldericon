@@ -31,6 +31,21 @@ namespace AppFolderIcon
         private Icon associatedIcon = null;
 
         /// <summary>
+        /// The fcs forcewrite.
+        /// </summary>
+        private UInt32 FCS_FORCEWRITE = 0x00000002;
+
+        /// <summary>
+        /// SHGs the et set folder custom settings.
+        /// </summary>
+        /// <returns>The et set folder custom settings.</returns>
+        /// <param name="pfcs">Pfcs.</param>
+        /// <param name="pszPath">Psz path.</param>
+        /// <param name="dwReadWrite">Dw read write.</param>
+        [DllImport("Shell32.dll", CharSet = CharSet.Auto)]
+        private static extern UInt32 SHGetSetFolderCustomSettings(ref LPSHFOLDERCUSTOMSETTINGS pfcs, string pszPath, UInt32 dwReadWrite);
+
+        /// <summary>
         /// Lpshfoldercustomsettings.
         /// </summary>
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
@@ -52,22 +67,6 @@ namespace AppFolderIcon
             public string pszLogo;
             public UInt32 cchLogo;
         }
-
-        /// <summary>
-        /// The fcs forcewrite.
-        /// </summary>
-        private UInt32 FCS_FORCEWRITE = 0x00000002;
-
-        /// <summary>
-        /// SHGs the et set folder custom settings.
-        /// </summary>
-        /// <returns>The et set folder custom settings.</returns>
-        /// <param name="pfcs">Pfcs.</param>
-        /// <param name="pszPath">Psz path.</param>
-        /// <param name="dwReadWrite">Dw read write.</param>
-        [DllImport("Shell32.dll", CharSet = CharSet.Auto)]
-        private static extern UInt32 SHGetSetFolderCustomSettings(ref LPSHFOLDERCUSTOMSETTINGS pfcs, string pszPath, UInt32 dwReadWrite);
-
         /// <summary>
         /// Initializes a new instance of the <see cref="T:AppFolderIcon.MainForm"/> class.
         /// </summary>
@@ -103,8 +102,8 @@ namespace AppFolderIcon
         /// <param name="e">Event arguments.</param>
         private void OnOriginalThreadDonationCodercomToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Open original thread
-            Process.Start("https://www.donationcoder.com/forum/index.php?topic=49923.0");
+            // IDEA: Pull icon from exe and put on the containing folder
+            Process.Start("https://www.donationcoder.com/forum/index.php?topic=51070.0");
         }
 
         /// <summary>

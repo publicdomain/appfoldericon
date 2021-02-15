@@ -66,6 +66,9 @@
     <None Include="app.config" />
     <None Include="Resources\file_157955_640_AeN_icon.ico" />
     <None Include="Resources\publicdomain.com_7-8-vista-xp.ico" />
+    <None Include="Lib\StringDistance\DamerauLevenshtein.dll" />
+    <None Include="Lib\StringDistance\LICENSE-StringDistance" />
+    <None Include="Lib\StringDistance\StringDistance-URL.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AboutForm.resx">
@@ -77,6 +80,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources" />
+    <Folder Include="Lib\" />
+    <Folder Include="Lib\StringDistance\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
