@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PublicDomain.com")]
 [assembly: AssemblyProduct("AppFolderIcon")]
-[assembly: AssemblyCopyright("Copyright 2021")]
+[assembly: AssemblyCopyright("Copyright 2021 - Vicor L. Senior")]
 [assembly: AssemblyTrademark("publicdomain")]
 [assembly: AssemblyCulture("")]
 
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can use the default the Revision and 
 // Build Numbers by using the '*' as shown below:
-[assembly: AssemblyVersion("0.1.0.*")]
+[assembly: AssemblyVersion("0.2.0.*")]

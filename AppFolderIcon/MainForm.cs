@@ -1,9 +1,7 @@
-﻿// // <copyright file="MainForm.cs" company="PublicDomain.com">
-// //     CC0 1.0 Universal (CC0 1.0) - Public Domain Dedication
-// //     https://creativecommons.org/publicdomain/zero/1.0/legalcode
-// // </copyright>
-using System.Linq;
-using System.Text;
+﻿// <copyright file="MainForm.cs" company="PublicDomain.com">
+//     CC0 1.0 Universal (CC0 1.0) - Public Domain Dedication
+//     https://creativecommons.org/publicdomain/zero/1.0/legalcode
+// </copyright>
 
 namespace AppFolderIcon
 {
@@ -13,8 +11,10 @@ namespace AppFolderIcon
     using System.Diagnostics;
     using System.Drawing;
     using System.IO;
+    using System.Linq;
     using System.Reflection;
     using System.Runtime.InteropServices;
+    using System.Text;
     using System.Windows.Forms;
     using Istepaniuk.StringDistance;
     using PublicDomain;
