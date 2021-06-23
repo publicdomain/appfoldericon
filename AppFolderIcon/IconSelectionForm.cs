@@ -217,7 +217,12 @@ namespace AppFolderIcon
         /// <param name="e">E.</param>
         private void OnIconTreeViewAfterSelect(object sender, TreeViewEventArgs e)
         {
-            // TODO Add code
+            // Update parent node icon
+            if (e.Node.Parent != null)
+            {
+                e.Node.Parent.ImageKey = e.Node.ImageKey;
+                e.Node.Parent.SelectedImageKey = e.Node.SelectedImageKey;
+            }
         }
     }
 }
