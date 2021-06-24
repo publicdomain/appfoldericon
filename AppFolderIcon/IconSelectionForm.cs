@@ -207,7 +207,29 @@ namespace AppFolderIcon
         /// <param name="e">E.</param>
         private void OnProcessButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Declare processed count 
+            int processedCount = 0;
+
+            // Iterate nodes
+            foreach (TreeNode node in this.iconTreeView.Nodes)
+            {
+                // Set settings
+                LPSHFOLDERCUSTOMSETTINGS FolderCustomSettings = new LPSHFOLDERCUSTOMSETTINGS
+                {
+                    dwMask = 0x10,
+                    pszIconFile = node.ImageKey,
+                    iIconIndex = 0
+                };
+
+                // Set new icon
+                UInt32 HRESULT = SHGetSetFolderCustomSettings(ref FolderCustomSettings, node.Name, FCS_FORCEWRITE);
+
+                // Raise processed count
+                processedCount++;
+            }
+
+            // Set processed count property
+            this.ProcessedCount = processedCount;
         }
 
         /// <summary>
