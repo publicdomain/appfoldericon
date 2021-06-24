@@ -175,7 +175,11 @@ namespace AppFolderIcon
             if (this.folderBrowserDialog.ShowDialog() == DialogResult.OK && this.folderBrowserDialog.SelectedPath.Length > 0)
             {
                 // Set icon selection form
-                IconSelectionForm iconSelectionForm = new IconSelectionForm(this.folderBrowserDialog.SelectedPath);
+                IconSelectionForm iconSelectionForm = new IconSelectionForm(this.folderBrowserDialog.SelectedPath)
+                {
+                    // Set icon
+                    Icon = this.Icon
+                };
 
                 // Show as dialog
                 iconSelectionForm.ShowDialog();

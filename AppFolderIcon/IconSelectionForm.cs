@@ -230,6 +230,9 @@ namespace AppFolderIcon
 
             // Set processed count property
             this.ProcessedCount = processedCount;
+
+            // Close form
+            this.Close();
         }
 
         /// <summary>

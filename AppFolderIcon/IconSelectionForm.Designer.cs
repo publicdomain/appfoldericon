@@ -82,7 +82,7 @@ namespace AppFolderIcon
         	this.setOneIconLabel.Name = "setOneIconLabel";
         	this.setOneIconLabel.Size = new System.Drawing.Size(278, 25);
         	this.setOneIconLabel.TabIndex = 0;
-        	this.setOneIconLabel.Text = "Set one icon per program:";
+        	this.setOneIconLabel.Text = "Set proper program icon::";
         	this.setOneIconLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         	// 
         	// iconTreeView
