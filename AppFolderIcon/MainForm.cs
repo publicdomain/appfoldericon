@@ -1,4 +1,4 @@
-﻿// <copyright file="MainForm.cs" company="PublicDomain.com">
+﻿// <copyright file="MainForm.cs" company="PublicDomainWeekly.com">
 //     CC0 1.0 Universal (CC0 1.0) - Public Domain Dedication
 //     https://creativecommons.org/publicdomain/zero/1.0/legalcode
 // </copyright>
@@ -33,6 +33,49 @@ namespace AppFolderIcon
         /// The log event.
         /// </summary>
         private LogEvent logEvent = new LogEvent();
+
+        /// <summary>
+        /// The fcs forcewrite.
+        /// </summary>
+        private UInt32 FCS_FORCEWRITE = 0x00000002;
+
+        /// <summary>
+        /// The fcsm iconfile.
+        /// </summary>
+        private UInt32 FCSM_ICONFILE = 0x00000010;
+
+        /// <summary>
+        /// SHGs the et set folder custom settings.
+        /// </summary>
+        /// <returns>The et set folder custom settings.</returns>
+        /// <param name="pfcs">Pfcs.</param>
+        /// <param name="pszPath">Psz path.</param>
+        /// <param name="dwReadWrite">Dw read write.</param>
+        [DllImport("Shell32.dll", CharSet = CharSet.Auto)]
+        private static extern UInt32 SHGetSetFolderCustomSettings(ref LPSHFOLDERCUSTOMSETTINGS pfcs, string pszPath, UInt32 dwReadWrite);
+
+        /// <summary>
+        /// Lpshfoldercustomsettings.
+        /// </summary>
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        struct LPSHFOLDERCUSTOMSETTINGS
+        {
+            public UInt32 dwSize;
+            public UInt32 dwMask;
+            public IntPtr pvid;
+            public string pszWebViewTemplate;
+            public UInt32 cchWebViewTemplate;
+            public string pszWebViewTemplateVersion;
+            public string pszInfoTip;
+            public UInt32 cchInfoTip;
+            public IntPtr pclsid;
+            public UInt32 dwFlags;
+            public string pszIconFile;
+            public UInt32 cchIconFile;
+            public int iIconIndex;
+            public string pszLogo;
+            public UInt32 cchLogo;
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:AppFolderIcon.MainForm"/> class.
@@ -113,6 +156,9 @@ namespace AppFolderIcon
                 $"Letter D by ArtsyBee - Pixabay License{Environment.NewLine}" +
                 $"https://pixabay.com/illustrations/d-glamour-gold-lights-2790573/{Environment.NewLine}{Environment.NewLine}";
 
+            // Prepend sponsors
+            licenseText = $"RELEASE SPONSORS:{Environment.NewLine}{Environment.NewLine}* Jesse Reichler{Environment.NewLine}* Curt{Environment.NewLine}{Environment.NewLine}=========={Environment.NewLine}{Environment.NewLine}" + licenseText;
+
             // Set title
             string programTitle = typeof(MainForm).GetTypeInfo().Assembly.GetCustomAttribute<AssemblyTitleAttribute>().Title;
 
@@ -123,7 +169,7 @@ namespace AppFolderIcon
             var aboutForm = new AboutForm(
                 $"About {programTitle}",
                 $"{programTitle} {version.Major}.{version.Minor}.{version.Build}",
-                $"Made for: kunkel321{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #45, Week #06 @ February 14, 2021",
+                $"Made for: kunkel321{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #177, Week #25 @ June 26, 2021",
                 licenseText,
                 this.Icon.ToBitmap())
             {
@@ -209,12 +255,11 @@ namespace AppFolderIcon
         }
 
         /// <summary>
-        /// Handles the delete desktop ini button click event.
+        /// Handles the restore folder icons button click event.
         /// </summary>
-        /// <param name="sender">Sender.</param>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
-        private void OnDeleteDesktopIniButtonClick(object sender, EventArgs e)
+        private void OnRestoreFolderIconsButtonClick(object sender, EventArgs e)
         {
             // Show folder browser dialog
             if (this.folderBrowserDialog.ShowDialog() == DialogResult.OK && this.folderBrowserDialog.SelectedPath.Length > 0)
@@ -222,14 +267,36 @@ namespace AppFolderIcon
                 // Declare processed count 
                 int processedCount = 0;
 
+                // Set sbudirectories list
+                var subdirectoryList = Directory.GetDirectories(this.folderBrowserDialog.SelectedPath, "*", SearchOption.TopDirectoryOnly);
+
                 // Iterate subdirectories
-                foreach (var desktopIniPath in Directory.GetFiles(this.folderBrowserDialog.SelectedPath, "desktop.ini", SearchOption.TopDirectoryOnly))
+                foreach (var subdirectory in subdirectoryList)
                 {
+                    // Get .exe file(s)
+                    List<string> exeFileList = Directory.GetFiles(subdirectory, "*.exe", SearchOption.TopDirectoryOnly).ToList();
+
+                    // Check for no exe file
+                    if (exeFileList.Count == 0)
+                    {
+                        // Halt flow
+                        continue;
+                    }
+
                     // Error handling & logging
                     try
                     {
-                        // Delete ini file
-                        File.Delete(desktopIniPath);
+                        // Set settings
+                        LPSHFOLDERCUSTOMSETTINGS FolderCustomSettings = new LPSHFOLDERCUSTOMSETTINGS
+                        {
+                            dwMask = FCSM_ICONFILE,
+                            pszIconFile = null,
+                            cchIconFile = 0,
+                            iIconIndex = 0
+                        };
+
+                        // Set default icon
+                        UInt32 HRESULT = SHGetSetFolderCustomSettings(ref FolderCustomSettings, subdirectory, FCS_FORCEWRITE);
 
                         // Raise count
                         processedCount++;
@@ -237,12 +304,15 @@ namespace AppFolderIcon
                     catch (Exception ex)
                     {
                         // Log error event
-                        this.logEvent.WriteEvent("desktop.ini removal failed", $"File: {desktopIniPath}{Environment.NewLine}Message: {ex.Message}");
+                        this.logEvent.WriteEvent("Folder icon restore failed", $"Directory: {subdirectory}{Environment.NewLine}Message: {ex.Message}");
                     }
                 }
 
+                // Update processed count 
+                this.countToolStripStatusLabel.Text = processedCount.ToString();
+
                 // Advise user
-                MessageBox.Show("Please refresh Explorer to see default icon.", $"Removed {processedCount} desktop.ini files", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Folder icons restored to default.", $"Restored {processedCount} icons", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
