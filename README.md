@@ -33,4 +33,16 @@ Day #45, Week #06 @ February 14, 2021
 
 ==========
 
+##RELEASE SPONSORS:
+
+- Jesse Reichler (A.K.A. Mouser from DonationCoder.com)
+- Kunkel321
+- Your name here? :)
+
+You may support this project by expressing your excitement in the form of a Donation via Paypal @ www.paypal.me/victorvls or by becoming a Patron @ www.patreon.com/publicdomain.
+
+Thanks & keep on rocking!
+
+==========
+
 Enjoy more **weekly** releases on the 1st, 7th, 14th and 21st @ https://publicdomainweekly.com
