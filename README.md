@@ -33,7 +33,7 @@ Day #45, Week #06 @ February 14, 2021
 
 ==========
 
-##RELEASE SPONSORS:
+#RELEASE SPONSORS:
 
 - Jesse Reichler (A.K.A. Mouser from DonationCoder.com)
 - Kunkel321
