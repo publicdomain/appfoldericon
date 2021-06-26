@@ -102,7 +102,7 @@ namespace AppFolderIcon
         private void OnWeeklyReleasesPublicDomainWeeklycomToolStripMenuItemClick(object sender, EventArgs e)
         {
             // Open weekly releases website
-            Process.Start("https://publicdomaingift.com");
+            Process.Start("https://publicdomainweekly.com");
         }
 
         /// <summary>
